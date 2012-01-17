@@ -35,7 +35,7 @@ function drush_sqlinit_sql_inti() {
 	return FALSE;
   }
 
-  $root_url = 'mysql://root@localhost';
+  $root_url = 'mysql://root@' . $db_spec['host'];
   // Connect as root.
   $root = drush_convert_db_from_db_url($root_url);
 
