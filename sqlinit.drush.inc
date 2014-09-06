@@ -25,7 +25,7 @@ function drush_sqlinit_sql_inti() {
   }
 
   if (!isset($db_spec)) {
-    $db_spec = _drush_sql_get_db_spec();
+    $db_spec = drush_sql_conf();
   }
 
   drush_backend_set_result($db_spec);
