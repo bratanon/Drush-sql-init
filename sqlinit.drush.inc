@@ -42,10 +42,10 @@ function drush_sqlinit_sql_inti() {
   mysql_connect($root['host'], $root['username'], $root['password']);
  
   // Create the database.
-  $result = mysql_query('CREATE DATABASE ' .  $db_spec['database']);
+  $result = mysql_query('CREATE DATABASE `' .  $db_spec['database'] . '`');
 
   // Make sure our user can write to it.
-  $grant_query = 'GRANT ALL PRIVILEGES ON ' . $db_spec['database'] . '.* TO \'' . $db_spec['username'] . '\'@\'localhost\'';
+  $grant_query = 'GRANT ALL PRIVILEGES ON `' . $db_spec['database'] . '`.* TO \'' . $db_spec['username'] . '\'@\'localhost\'';
   if (isset($db_spec['password'])) {
     $grant_query .= ' IDENTIFIED BY \'' . $db_spec['password'] . '\''; 
   }
